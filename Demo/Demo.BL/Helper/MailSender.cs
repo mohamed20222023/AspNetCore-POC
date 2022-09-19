@@ -21,9 +21,9 @@ namespace Demo.BL.Helper
 
                 smtp.EnableSsl = true;
 
-                smtp.Credentials = new NetworkCredential("apikey", "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");
+                smtp.Credentials = new NetworkCredential(" // Your Key", " // Your Code");
 
-                smtp.Send("m01555232728@gmail.com", mail.ToMail, mail.Subject, mail.Body);
+                smtp.Send(" // Your Email ", mail.ToMail, mail.Subject, mail.Body);
 
                 return "Succeed";
 
