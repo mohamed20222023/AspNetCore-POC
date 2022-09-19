@@ -1,0 +1,34 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section JqueryUI {
+    <link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.css">
+}
+
+    <div class="block-header">
+        <h2>Details User </h2>
+    </div>
+
+        <label asp-for="Id">ID</label>
+        <input type="text" asp-for="Id" class="form-control p-2" readonly>
+        <br />
+
+        <label asp-for="UserName">User Name</label>
+        <input type="email" asp-for="UserName" class="form-control p-2" readonly>
+        <br />
+
+        <label asp-for="Email">Email</label>
+        <input type="email" asp-for="Email" class="form-control p-2" readonly>
+        <br />
+
+
+        <center>
+            <a asp-action="Index" asp-controller="Users" class="btn btn-info">Return</a>
+            <a asp-action="Update" asp-controller="Users" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+        </center>
+        <br />
+        <br />
+        <br />
+

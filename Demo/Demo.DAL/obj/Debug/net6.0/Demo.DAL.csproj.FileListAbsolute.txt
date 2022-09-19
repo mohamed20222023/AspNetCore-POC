@@ -1,0 +1,14 @@
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\bin\Debug\net6.0\Demo.DAL.deps.json
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\bin\Debug\net6.0\Demo.DAL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\bin\Debug\net6.0\Demo.DAL.pdb
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.csproj.AssemblyReference.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.GeneratedMSBuildEditorConfig.editorconfig
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.AssemblyInfoInputs.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.AssemblyInfo.cs
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.csproj.CoreCompileInputs.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\refint\Demo.DAL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.pdb
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\ref\Demo.DAL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\bin\Debug\net6.0\Demo.DAL.runtimeconfig.json
+G:\Learn MVC\Session 03\Project\Demo\Demo.DAL\obj\Debug\net6.0\Demo.DAL.genruntimeconfig.cache

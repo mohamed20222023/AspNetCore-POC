@@ -1,0 +1,36 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@section JqueryUI {
+    <link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.css">
+}
+
+    <div class="block-header">
+        <h2>Delete User </h2>
+    </div>
+
+<form asp-action="Delete" asp-controller="Users">
+
+    <input type="hidden" asp-for="Id" />
+
+
+
+    <label asp-for="UserName">User Name</label>
+        <input type="email" asp-for="UserName" class="form-control p-2" readonly>
+    <br />
+
+
+    <center>
+        <a asp-action="Index" asp-controller="Users" class="btn btn-info">Return</a>
+        <a asp-action="Update" asp-controller="Users" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+
+    </center>
+    <br />
+    <br />
+    <br />
+
+ </form>
+

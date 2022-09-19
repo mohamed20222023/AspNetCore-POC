@@ -1,0 +1,30 @@
+﻿@model IdentityRole
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section JqueryUI {
+    <link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.css">
+}
+
+    <div class="block-header">
+        <h2>Detail Role </h2>
+    </div>
+
+        <label asp-for="Id">ID</label>
+        <input type="text" asp-for="Id" class="form-control p-2" readonly>
+        <br />
+
+        <label asp-for="Name">Name</label>
+        <input type="text" asp-for="Name" class="form-control p-2" readonly>
+        <br />
+
+
+        <center>
+            <a asp-action="Index" asp-controller="Roles" class="btn btn-info">Return</a>
+            <a asp-action="Update" asp-controller="Roles" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+        </center>
+        <br />
+        <br />
+        <br />
+

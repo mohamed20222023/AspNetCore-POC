@@ -1,0 +1,50 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+@section JqueryUI {
+    <link rel="stylesheet" href="~/jqueryui/themes/base/jquery-ui.css">
+        @*<link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.css">*@
+    }
+
+    <div class="block-header">
+        <h2>Update User : @Model.Email</h2>
+    </div>
+
+
+    @*Helper Tag*@
+    <form asp-controller="Users" asp-action="Update" class="form-group" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="SecurityStamp" />
+
+
+        <label asp-for="UserName">User Name</label>
+        <input type="email" asp-for="UserName" class="form-control" placeholder="UserName">
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <br />
+        
+        <label asp-for="Email">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Employee Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <br />
+
+
+
+    <center>
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" asp-controller="Users" class="btn btn-info">Return</a>
+    </center>
+
+</form>
+
+@section JQueryValidation {
+
+    <script src="~/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+

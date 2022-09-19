@@ -1,0 +1,28 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = @SharedLocalizer["Details"];
+}
+
+<div class="block-header">
+    <h2>@Model.Name @SharedLocalizer["Details"]</h2>
+</div>
+
+<label asp-for="Id">@SharedLocalizer["DepartmentId"]</label>
+<input type="text" asp-for="Id" class="form-control" readonly />
+<br />
+
+<label asp-for="Name">@SharedLocalizer["DN"]</label>
+<input type="text" asp-for="Name" class="form-control" readonly />
+<br />
+
+<label asp-for="Code">@SharedLocalizer["DC"]</label>
+<input type="text" asp-for="Code" class="form-control" readonly />
+<br />
+
+<center>
+    <a asp-action="Index" asp-controller="Department" class="btn btn-info">@SharedLocalizer["Return"]</a>
+    <a asp-action="Update" asp-controller="Department" asp-route-id="@Model.Id" class="btn btn-warning">@SharedLocalizer["Update"]</a>
+    <a asp-action="Delete" asp-controller="Department" asp-route-id="@Model.Id" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
+
+</center>
+

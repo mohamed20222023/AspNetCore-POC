@@ -1,0 +1,15 @@
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\bin\Debug\net6.0\Demo.BL.deps.json
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\bin\Debug\net6.0\Demo.BL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\bin\Debug\net6.0\Demo.BL.pdb
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\bin\Debug\net6.0\Demo.DAL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\bin\Debug\net6.0\Demo.DAL.pdb
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.csproj.AssemblyReference.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.GeneratedMSBuildEditorConfig.editorconfig
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.AssemblyInfoInputs.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.AssemblyInfo.cs
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.csproj.CoreCompileInputs.cache
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.csproj.CopyComplete
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\refint\Demo.BL.dll
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\Demo.BL.pdb
+G:\Learn MVC\Session 03\Project\Demo\Demo.BL\obj\Debug\net6.0\ref\Demo.BL.dll

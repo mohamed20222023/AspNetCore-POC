@@ -1,0 +1,175 @@
+﻿@model EmployeeVM
+@inject Demo.BL.Interface.ICountryRep country
+@{
+    ViewData["Title"] =  SharedLocalizer["Update"];
+}
+
+
+@section JqueryUI {
+    <link rel="stylesheet" href="~/jqueryui/themes/base/jquery-ui.css">
+    @*<link rel="stylesheet" href="~/plugins/bootstrap-select/css/bootstrap-select.css">*@
+}
+
+    <div class="block-header">
+        <h2> @SharedLocalizer["Update"] : @Model.Name</h2>
+    </div>
+
+    <h1>@ViewData["Msg"]</h1>
+    <h1>@TempData["Msg"]</h1>
+
+
+    @*Helper Tag*@
+    <form asp-controller="Employee" asp-action="Update" class="form-group" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="Id" />
+
+        <label asp-for="Name">@SharedLocalizer["Name"]</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="@SharedLocalizer["EmployeeName"]" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <br />
+
+        <label asp-for="Salary">@SharedLocalizer["Salary"]</label>
+        <input type="text" asp-for="Salary" class="form-control" placeholder="@SharedLocalizer["EmployeeSalary"]" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+        <br />
+
+        <label asp-for="HireDate">@SharedLocalizer["HireDate"]</label>
+        <input type="text" asp-for="HireDate" class="form-control" placeholder="@SharedLocalizer["HireDate"]" autocomplete="off">
+        <span asp-validation-for="HireDate" class="text-danger"></span>
+        <br />
+
+
+        <label asp-for="Email">@SharedLocalizer["EmailAddress"]</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="@SharedLocalizer["EmployeeEmail"]">
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <br />
+
+
+        <label asp-for="EmpAddress">@SharedLocalizer["Address"]</label>
+        <input type="text" asp-for="EmpAddress" class="form-control" placeholder="@SharedLocalizer["EmployeeAddress"]">
+        <span asp-validation-for="EmpAddress" class="text-danger"></span>
+        <br />
+
+
+        <label asp-for="Notes">@SharedLocalizer["Notes"]</label>
+        <textarea asp-for="Notes" class="form-control" placeholder="@SharedLocalizer["EmployeeNotes"]" rows="4"></textarea>
+        <span asp-validation-for="Notes" class="text-danger"></span>
+        <br />
+
+
+        <div class="demo-checkbox">
+            <input type="checkbox" asp-for="IsActive" checked="" />
+            <label asp-for="IsActive">@SharedLocalizer["IsActive"]</label>
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+        <br />
+
+        <br /><br />
+        <label asp-for="CV">@SharedLocalizer["CV"]</label>
+        <input type="file" asp-for="CV" class="form-control p-2">
+        <br /><br />
+
+        <label asp-for="Image">@SharedLocalizer["Image"]</label>
+        <input type="file" asp-for="Image" class="form-control p-2">
+        <br /><br />
+
+
+        <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentList">
+        </select>
+
+        <label>@SharedLocalizer["Country"]</label>
+        <select id="CountryList">
+        @foreach (var item in await country.GetAsync())
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <br /> <br />
+
+
+    <label>@SharedLocalizer["City"]</label>
+    <select id="CityList">
+    </select>
+
+
+    <br /> <br />
+    <label asp-for="DistrictId">@SharedLocalizer["District"]</label>
+    <select asp-for="DistrictId">
+    </select>
+
+    <center>
+        <input type="submit" value="@SharedLocalizer["Save"]" class="btn btn-primary" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-info">@SharedLocalizer["Return"]</a>
+    </center>
+
+
+        <input type="hidden" asp-for="ImageName" />
+        <input type="hidden" asp-for="CvName" />
+
+    </form>
+
+    @section JQueryValidation {
+
+    <script src="~/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+            $(function () {
+
+                $("#HireDate").datepicker();
+
+                $("#CountryList").change(function () {
+
+                    $("#CityList").empty();
+                    $("#CityList").append("<option>Choose City</option>")
+
+                    var CountryId = $("#CountryList option:selected").val();
+
+                    $.ajax({
+
+                        type: "POST",
+                        url: "/Employee/GetCityDataByCountryId",
+                        data: { CntryId: CountryId },
+                        success: function (res) {
+
+                            $.each(res, function (i, e) {
+
+                                $("#CityList").append("<option value='" + e.Id + "'>" + e.Name + "</option>")
+                            });
+                        }
+
+                    });
+                });
+
+
+                $("#CityList").change(function () {
+
+                    $("#DistrictId").empty();
+                    $("#DistrictId").append("<option>Choose District</option>")
+
+                    var CityId = $("#CityList option:selected").val();
+
+                    $.ajax({
+
+                        type: "POST",
+                        url: "/Employee/GetDistrictDataByCityId",
+                        data: { CtyId: CityId },
+                        success: function (res) {
+
+                            $.each(res, function (i, e) {
+
+                                $("#DistrictId").append("<option value='" + e.Id + "'>" + e.Name + "</option>")
+
+                            });
+                        }
+
+                    });
+                });
+
+            });
+
+    </script>
+}
+
+
